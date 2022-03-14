@@ -1,7 +1,7 @@
 from django.urls import path
 
-from leaf_app.views import test_page
+from leaf_app.views import MapPageView
 
 urlpatterns = [
-    path('', test_page)
+    path('', MapPageView.as_view())
 ]

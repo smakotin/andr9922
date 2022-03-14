@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load leaflet_tags %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    {% leaflet_js %}
+    {% leaflet_css %}
+
+    <style>
+
+    .leaflet-container {  /* all maps */
+        width:  1200px;
+        height: 600px;
+
+    }
+
+    #specialbigmap {
+        height: 800px;
+    }
+
+    /* Resize the "display_raw" textbox */
+    .django-leaflet-raw-textarea {
+        width: 100%;
+    }
+
+</style>
+
+</head>
+<body>
+
+<h1>Click on the map to save the coordinates of the point</h1>
+
+{% leaflet_map "yourmap" callback="window.map_init_basic" %}
+
+</body>
+</html>

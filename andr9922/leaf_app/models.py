@@ -1,3 +1,9 @@
-from django.db import models
+from django.contrib.gis.db import models
 
-# Create your models here.
+
+class Point(models.Model):
+    coordinate = models.PointField()
+
+    def __str__(self):
+        return self.coordinate
+

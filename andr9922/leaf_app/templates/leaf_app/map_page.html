@@ -7,30 +7,33 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-
-    <script src="https://unpkg.com/wrld.js@1.x.x"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.css" rel="stylesheet"/>
+    {% leaflet_js %}
+    {% leaflet_css %}
 
 
 </head>
 <body>
 
 <h1>Click on the map to save the coordinates of the point</h1>
- <a href="/coordinates">list of points</a>
+<a href="/coordinates">list of points</a>
 <hr>
 
 <div style="position: relative">
-    <div id="map" style="height: 400px"></div>
+    <div id="map" style="height: 600px"></div>
     <script>
-    var map = L.map('map').setView([53.90, 27.55], 11);
-    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-      map.on("click", function(e) {
-        var latlng = e.latlng;
-        var pixelPosition = map.latLngToLayerPoint(latlng);
-        alert("LatLng = " + latlng + "\n Pixel position = " + pixelPosition);
-      });
+        var map = L.map('map').setView([53.90, 27.55], 11);
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+        map.on("click", function(e) {
+                var latlng = e.latlng;
+                var marker = new L.marker(latlng).addTo(map);
+                marker.bindPopup(""+ latlng).openPopup();
+                console.log(latlng);
+             }
+             );
+
 
     </script>
+
 </div>
 </body>
 </html>

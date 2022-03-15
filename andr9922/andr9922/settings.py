@@ -120,6 +120,9 @@ LEAFLET_CONFIG = {
     'MIN_ZOOM': 3,
     'MAX_ZOOM': 18,
     'DEFAULT_PRECISION': 6,
+    # 'TILES': 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    # 'OVERLAYS': [('Cadastral', 'http://server/a/{z}/{x}/{y}.png', {'attribution': '&copy; IGN'})],
+    'ATTRIBUTION_PREFIX': 'Smakotin Andrey, practice',
 }
 
 # Internationalization

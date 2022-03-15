@@ -1,5 +1,4 @@
 from django.urls import path
-
 from leaf_app.views import MapPageView, PointListView, add_point
 
 urlpatterns = [

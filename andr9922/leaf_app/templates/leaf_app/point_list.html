@@ -1,24 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <title>List of points</title>
 </head>
 <body>
-<h1>Helo from list page</h1>
+<h1>All Points</h1>
 
- <a href="/">Go home</a>
-<hr>
+<a href="/">Go home</a>
 
-<table>
-    {% for point in points %}
+<table class="table table-striped">
+    <thead>
     <tr>
-        <td>{{ point.coordinate }}</td>
+        <th scope="col">#</th>
+        <th scope="col">title</th>
+        <th scope="col">point</th>
     </tr>
-    {% endfor %}
+    </thead>
+    <tbody>
+        {% for point in points reversed %}
+    <tr>
+        <th scope="row">{{ point.id }}</th>
+        <td>{{ point.title }}</td>
+        <td>{{ point.coordinate }}</td>
+        {% endfor %}
 </table>
-
-
 
 </body>
 </html>

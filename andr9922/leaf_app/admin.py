@@ -4,6 +4,4 @@ from leaf_app.models import Point
 
 @admin.register(Point)
 class PointAdmin(admin.ModelAdmin):
-    list_display = ['id', 'coordinate']
-
-
+    list_display = ['id', 'title', 'coordinate']

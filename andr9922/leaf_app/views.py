@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
-from django.contrib.gis.geos import Point as P
-
+from django.contrib.gis.geos import Point as PointObject
 from leaf_app.models import Point
 
 
@@ -20,10 +19,10 @@ def add_point(request):
         title = request.POST.get('title')
         lat = float(request.POST.get('lat'))
         lng = float(request.POST.get('lng'))
-        point_object = P(lat, lng)
+        point_object = PointObject(lat, lng)
 
         point = Point(title=title, coordinate=point_object)
         point.save()
 
-        return render(request, 'leaf_app/map_page.html')
+        # return render(request, 'leaf_app/map_page.html')
     return render(request, 'leaf_app/map_page.html')
